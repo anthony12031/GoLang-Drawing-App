@@ -27,6 +27,8 @@ func (u *UserController) Post() {
 	fmt.Printf("%+v\n", user)
 	uid := models.AddUser(user)
 	u.Data["json"] = map[string]string{"uid": uid}
+		fmt.Println(user.Username)
+	u.SetSession("session",user.Username)
 	u.ServeJSON()
 }
 
@@ -109,7 +111,7 @@ func (u *UserController) Login() {
 	fmt.Println(password	)
 	if models.Login(username, password) {
 		u.Data["json"] = "login success"
-		u.SetSession("session",int(1))
+		u.SetSession("session",username)
 	} else {
 		u.Data["json"] = "user not exist"
 		u.Ctx.ResponseWriter.WriteHeader(404)
@@ -117,20 +119,14 @@ func (u *UserController) Login() {
 	u.ServeJSON()
 }
 
-/*
-// @router /quien [get]
-func (u *UserController) Quien() {
-	fmt.Println("quien route")
-	u.Data["json"] = "quien pues"
-	u.ServeJSON()
-}
-*/
+
 
 // @Title logout
 // @Description Logs out current logged in user session
 // @Success 200 {string} logout success
 // @router /logout [get]
 func (u *UserController) Logout() {
+	u.DelSession("session")
 	u.Data["json"] = "logout success"
 	u.ServeJSON()
 }

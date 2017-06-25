@@ -15,7 +15,7 @@
 <body ng-controller="wbCtrl">
 
   <!-- Colored raised button -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="logout">
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="logout" ng-click="logout()">
   logout
 </button>
 

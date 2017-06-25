@@ -7,7 +7,7 @@ $scope.registerUser = function(username,pass){
   $http.post('/v1/user',{Username:username,Password:pass})
   .then(function(res){
     console.log(res);
-    //$window.location.href = "/whiteBoard";
+    $window.location.href = "/whiteBoard";
   },function(err){
     console.error(err);
   })
@@ -17,7 +17,7 @@ $scope.login = function(usern,pass){
   $http.get('/v1/user/login/?username='+usern+'&password='+pass)
   .then(function(res){
     console.log(res);
-    //$window.location.href = "/whiteBoard";
+    $window.location.href = "/whiteBoard";
   },function(err){
     console.error(err);
   })

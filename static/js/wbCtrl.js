@@ -1,9 +1,17 @@
 var app = angular.module('pizarra',[]);
 
-app.controller('wbCtrl',['$scope',function($scope){
+app.controller('wbCtrl',['$scope','$http','$window',function($scope,$http,$window){
 
 $scope.user = "user";
 
+$scope.logout = function(){
+  console.log("logout")
+  $http.get('/v1/user/logout')
+  .then(function(res){
+    console.log(res);
+    $window.location.href = "/whiteBoard";
+  })
+}
 
 
 }])
