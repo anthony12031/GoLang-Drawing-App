@@ -7,6 +7,8 @@ import (
 
 func init() {
     beego.Router("/", &controllers.HomeController{})
+		beego.Router("/whiteBoard", &controllers.WBController{})
+
 		ns := beego.NewNamespace("/v1",
 			beego.NSNamespace("/user",
 				beego.NSInclude(

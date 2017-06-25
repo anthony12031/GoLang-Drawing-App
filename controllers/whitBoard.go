@@ -8,6 +8,7 @@ type WBController struct {
 	beego.Controller
 }
 
+// @router / [get]
 func (c *WBController) Get() {
 	c.TplName = "whiteBoard.tpl"
 }

@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"api/models"
+	"whiteBoard/models"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -38,6 +38,7 @@ func (u *UserController) GetAll() {
 	users := models.GetAllUsers()
 	u.Data["json"] = users
 	u.ServeJSON()
+
 }
 
 // @Title Get
@@ -103,14 +104,27 @@ func (u *UserController) Delete() {
 // @router /login [get]
 func (u *UserController) Login() {
 	username := u.GetString("username")
+	fmt.Println(username)
 	password := u.GetString("password")
+	fmt.Println(password	)
 	if models.Login(username, password) {
 		u.Data["json"] = "login success"
+		u.SetSession("session",int(1))
 	} else {
 		u.Data["json"] = "user not exist"
+		u.Ctx.ResponseWriter.WriteHeader(404)
 	}
 	u.ServeJSON()
 }
+
+/*
+// @router /quien [get]
+func (u *UserController) Quien() {
+	fmt.Println("quien route")
+	u.Data["json"] = "quien pues"
+	u.ServeJSON()
+}
+*/
 
 // @Title logout
 // @Description Logs out current logged in user session

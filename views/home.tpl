@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="pizarra">
+<html lang="en" ng-app="user">
 <head>
 	<meta charset="UTF-8">
 	<title>White Board</title>
@@ -16,7 +16,7 @@
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
-    <form class="login-form" ng-submit="login()">
+    <form class="login-form" ng-submit="login(username,pass)">
       <input type="text" placeholder="username" ng-model="username"/>
       <input type="password" placeholder="password" ng-model="pass"/>
       <button>login</button>
@@ -24,8 +24,8 @@
     </form>
   </div>
 </div>
-	
-    
+
+
    <!-- Jquery -->
    <script   src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
     <!-- AngulaJs -->

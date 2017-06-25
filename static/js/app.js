@@ -1,24 +1,39 @@
-var app = angular.module('pizarra',[]);
+var app = angular.module('user',[]);
 
-app.controller('userCtrl',['$scope','$http',function($scope,$http){
-
+app.controller('userCtrl',['$scope','$http','$window',function($scope,$http,$window){
 
 $scope.registerUser = function(username,pass){
-  console.log('register')
-  console.log(username)
-  console.log(pass)
   var newUser = JSON.stringify({Username:username,Password:pass})
-  console.log(newUser)
   $http.post('/v1/user',{Username:username,Password:pass})
   .then(function(res){
     console.log(res);
+    //$window.location.href = "/whiteBoard";
   },function(err){
     console.error(err);
   })
 }
 
+$scope.login = function(usern,pass){
+  $http.get('/v1/user/login/?username='+usern+'&password='+pass)
+  .then(function(res){
+    console.log(res);
+    //$window.location.href = "/whiteBoard";
+  },function(err){
+    console.error(err);
+  })
+}
+
+function getAllusers(){
+$http.get('/v1/user')
+.then(function(res){
+  console.log(res.data);
+},function(err){
+  console.error(err);
+})
+
 $scope.login = function(){
   console.log('login')
+}
 }
 
 
