@@ -1,4 +1,5 @@
 #Proyecto final grupo de trabajo desarrollo web con lenguage GO
+===============================================================
 #Herramienta de dibujo con trazos suaves ,opciones de color y grosor manejo de usuarios utilzando Beego
 Para ejecutar el aplicativo:
 1.Si se posee BEE en el sistema ejecutar bee run si no ir al paso 2
