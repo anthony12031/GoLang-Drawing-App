@@ -19,6 +19,7 @@
     <form class="login-form" ng-submit="login(username,pass)">
       <input type="text" placeholder="username" ng-model="username"/>
       <input type="password" placeholder="password" ng-model="pass"/>
+			<p id="login-error">Contraseña o usuario incorrecto</p>
       <button>login</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>

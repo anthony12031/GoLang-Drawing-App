@@ -6,6 +6,10 @@
   margin: auto;
 }
 
+#login-error{
+  color:red;
+  display: none;
+}
 
 .form {
   position: relative;

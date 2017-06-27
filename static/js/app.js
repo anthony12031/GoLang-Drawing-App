@@ -20,6 +20,7 @@ $scope.login = function(usern,pass){
     $window.location.href = "/whiteBoard";
   },function(err){
     console.error(err);
+    $('#login-error').show();
   })
 }
 
