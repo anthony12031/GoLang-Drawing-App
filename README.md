@@ -1,6 +1,6 @@
 Proyecto final grupo de trabajo desarrollo web con lenguage GO
 ===============================================================
-Herramienta de dibujo con trazos suaves ,opciones de color y grosor manejo de usuarios utilzando Beego.
+Herramienta de dibujo con trazos suaves ,opciones de color y grosor manejo de usuarios utilzando Beego ,AngularJs,Jquery.
 -------------------------------------------------------------------------------------------------------
 Para ejecutar el aplicativo:
 ------------------------------------------------------------
